@@ -1,6 +1,9 @@
 #ifndef KALMAN_FILTER_H_
 #define KALMAN_FILTER_H_
 #include "Eigen/Dense"
+#include "tools.h"
+
+using namespace std;
 
 class KalmanFilter {
 public:
@@ -63,6 +66,19 @@ public:
    * @param z The measurement at k+1
    */
   void UpdateEKF(const Eigen::VectorXd &z);
+
+  /**
+   * Updates the state by using Extended Kalman Filter equations
+   * @param y The measurement at k+1
+   */
+  void UpdateY(const VectorXd &y);
+
+  /**
+   * Normalize an angle
+   * @param thera The angle to be normalziized
+   */
+  void NormlizeAng(double &theta);
+
 
 };
 
