@@ -22,16 +22,17 @@ All the codes are stored at src/ folder, which contains:
 - FusionEKF.h & .cpp:
   - Initialize Variables as taught in the class:
   
-  ```
-  H_laser_ << 1, 0, 0, 0,
-              0, 1, 0, 0;
+```
+H_laser_ << 1, 0, 0, 0,
+            0, 1, 0, 0;
 
-  ekf_.P_ = MatrixXd(4, 4);
-  ekf_.P_ << 1, 0, 0, 0,
-             0, 1, 0, 0,
-             0, 0, 1000, 0,
-             0, 0, 0, 1000;
-  ```
+ekf_.P_ = MatrixXd(4, 4);
+ekf_.P_ << 1, 0, 0, 0,
+           0, 1, 0, 0,
+           0, 0, 1000, 0,
+           0, 0, 0, 1000;
+```
+  
   - The ProcessMeasurement() function initilize EKF instance using the first measurement received, and then predict & update by using the functions in kalman_filter.cpp
   
 - kalman_filter.h & .cpp：
@@ -46,10 +47,10 @@ All the codes are stored at src/ folder, which contains:
 
 Here are the accuracy figures for both database1 and database2.
 
-![Accuracy for database 1](/Accuracy_db1.png)
+![Accuracy for database 1](Accuracy_db1.png)
 As we can see here, the accuracy is [0.0973, 0.0855, 0.4513, 0.4399], which meets the requirement of being less than [.11, .11, 0.52, 0.52]. 
 
-![Accuracy for database 2](/Accuracy_db2.png)
+![Accuracy for database 2](Accuracy_db2.png)
 
 The accuracy for databese2 is a bit lower, which is [0.1007, 0.1308, 0.6014, 0.5778].
 
